@@ -11,9 +11,7 @@ class Gallery extends Component {
 
   getAllMedias = async () => {
     try {
-      let response = await fetch(
-        "https://eleflixbesolo-production.up.railway.app/medias"
-      );
+      let response = await fetch(process.env.REACT_APP_BE_URL + "/medias");
       if (response.ok) {
         let mediaArr = await response.json();
         console.log(mediaArr);
