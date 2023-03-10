@@ -4,9 +4,9 @@ const Movie = (props) => {
   return (
     <Col>
       <Card>
-        <Card.Img variant="top" src={props.singleMovie.Poster} />
+        <Card.Img variant="top" src={props.singleMovie.poster} />
         <Card.Body>
-          <Card.Title>{props.singleMovie.Title}</Card.Title>
+          <Card.Title>{props.singleMovie.title}</Card.Title>
         </Card.Body>
       </Card>
     </Col>

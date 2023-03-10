@@ -4,21 +4,24 @@ import Movie from "./Movie";
 
 class Gallery extends Component {
   state = {
-    sagaArr: [],
+    mediasArr: [],
     isLoading: true,
     isError: false,
   };
-  getSaga = async () => {
+
+  getAllMedias = async () => {
     try {
-      let response = await fetch(process.env.REACT_APP_BE_PROD_URL + "/medias");
+      let response = await fetch(
+        "https://eleflixbesolo-production.up.railway.app/medias"
+      );
       if (response.ok) {
         let mediaArr = await response.json();
         console.log(mediaArr);
-        // mediaArr = mediaArr.Search;
-        // this.setState({
-        //   sagaArr: mediaArr,
-        //   isLoading: false,
-        // });
+        //mediaArr = mediaArr.Search;
+        this.setState({
+          mediasArr: mediaArr,
+          isLoading: false,
+        });
       } else {
         this.setState({
           isLoading: false,
@@ -35,7 +38,7 @@ class Gallery extends Component {
   };
 
   componentDidMount() {
-    this.getSaga();
+    this.getAllMedias();
   }
 
   render() {
@@ -46,8 +49,8 @@ class Gallery extends Component {
           <Alert variant="danger">Aww snap, we got an error! 🌩️</Alert>
         )}
 
-        {this.state.sagaArr.map((movie) => {
-          return <Movie singleMovie={movie} key={movie.imdbID} />;
+        {this.state.mediasArr.map((media) => {
+          return <Movie singleMovie={media} key={media.id} />;
         })}
       </>
     );
