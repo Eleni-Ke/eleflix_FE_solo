@@ -12,7 +12,7 @@ function App() {
         <NavigationBar />
         <Jumbotron />
         <Routes>
-          <Route element={<MainSection />} path="/medias" />
+          <Route element={<MainSection />} path="/" />
         </Routes>
         <PageFooter />
       </div>
