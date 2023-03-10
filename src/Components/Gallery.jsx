@@ -2,8 +2,6 @@ import { Component } from "react";
 import { Alert, Spinner } from "react-bootstrap";
 import Movie from "./Movie";
 
-const url = "http://www.omdbapi.com/?apikey=7a852a40&s=";
-
 class Gallery extends Component {
   state = {
     sagaArr: [],
@@ -12,14 +10,15 @@ class Gallery extends Component {
   };
   getSaga = async () => {
     try {
-      let response = await fetch(url + this.props.saga);
+      let response = await fetch(process.env.REACT_APP_BE_PROD_URL + "/medias");
       if (response.ok) {
-        let movieArr = await response.json();
-        movieArr = movieArr.Search;
-        this.setState({
-          sagaArr: movieArr,
-          isLoading: false,
-        });
+        let mediaArr = await response.json();
+        console.log(mediaArr);
+        // mediaArr = mediaArr.Search;
+        // this.setState({
+        //   sagaArr: mediaArr,
+        //   isLoading: false,
+        // });
       } else {
         this.setState({
           isLoading: false,
