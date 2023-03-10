@@ -12,7 +12,7 @@ function App() {
         <NavigationBar />
         <Jumbotron />
         <Routes>
-          <Route element={<MainSection />} path="/tv-shows" />
+          <Route element={<MainSection />} path="/medias" />
         </Routes>
         <PageFooter />
       </div>

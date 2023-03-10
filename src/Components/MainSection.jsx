@@ -9,17 +9,9 @@ class MainSection extends Component {
     return (
       <Container className="d-flex main-container">
         <>
-          <h2>Lord of The Rings Saga:</h2>
+          <h2>Media</h2>
           <Row>
-            <Gallery saga="Lord of the Rings" />
-          </Row>
-          <h2>Harry Potter Saga:</h2>
-          <Row>
-            <Gallery saga="Harry Potter" />
-          </Row>
-          <h2>Star Wars Saga:</h2>
-          <Row>
-            <Gallery saga="Star Wars" />
+            <Gallery />
           </Row>
         </>
       </Container>
